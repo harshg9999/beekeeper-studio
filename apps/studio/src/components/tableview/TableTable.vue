@@ -240,10 +240,6 @@
             <x-menuitem @click="importTab" :disabled="dialectData?.disabledFeatures?.importFromFile">
               <x-label>
                 Import from file
-                <i
-                  v-if="$store.getters.isCommunity"
-                  class="material-icons menu-icon"
-                >stars</i>
               </x-label>
             </x-menuitem>
             <x-menuitem @click="openQueryTab">
@@ -1153,12 +1149,12 @@ export default Vue.extend({
         '=', '!=', '<', '<=', '>', '>=', 'in', 'like'
       ]
       return {
-        label: createMenuItem("Quick Filter", "", this.$store.getters.isCommunity),
+        label: createMenuItem("Quick Filter", "", this.false),
         disabled: _.isNil(cell.getValue()),
         menu: symbols.map((s) => {
           return {
             label: createMenuItem(`${cell.getField()} ${s} value`),
-            disabled: this.$store.getters.isCommunity,
+            disabled: this.$store.getters.false,
             action: async (_e, cell: CellComponent) => {
               const newFilter = [{ 
                 field: cell.getField(), 

@@ -1,3 +1,36 @@
+<<<<<<< HEAD
+# Beekeeper Studio LOcal windows install.
+=======
+## Beekeeper Studio LOcal windows install.
+>>>>>>> 6d493739be1f588bed98764ad87b5c3ea2f2cc8c
+
+```bash
+# First: Install NodeJS 20, NPM, and Yarn
+# ...
+
+# 1. Fork the Beekeeper Studio Repo (click fork button at top right of this screen)
+# 2. Check out your fork:
+git clone git@github.com:<your-username>/beekeeper-studio.git beekeeper-studio
+cd beekeeper-studio/
+yarn install # installs dependencies
+
+
+# Now you can start the app:
+yarn lib:build 
+cd apps/studio 
+yarn dev:vite
+
+# Open New powershell terminal 
+<<<<<<< HEAD
+cd beekeeper-studio\apps\studio
+=======
+cd apps/studio 
+>>>>>>> 6d493739be1f588bed98764ad87b5c3ea2f2cc8c
+node esbuild.js watch
+
+# Use node esbuild.mjs watch, if above doesn't work. 
+# Issue https://github.com/beekeeper-studio/beekeeper-studio/issues/3357
+```
 # Beekeeper Studio
 
 Beekeeper Studio is a cross-platform SQL editor and database manager available for Linux, Mac, and Windows.
